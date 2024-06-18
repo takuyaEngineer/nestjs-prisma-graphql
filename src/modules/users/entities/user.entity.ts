@@ -1,8 +1,6 @@
 import { Field } from '@nestjs/graphql';
 import { ObjectType } from '@nestjs/graphql';
 import { ID } from '@nestjs/graphql';
-// import { Post } from '../post/post.model';
-
 import { Post } from '../../posts/entities/post.entity';
 import { UserCount } from './user-count.output';
 
