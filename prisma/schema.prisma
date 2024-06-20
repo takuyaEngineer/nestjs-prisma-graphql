@@ -8,6 +8,12 @@ generator client {
   provider = "prisma-client-js"
 }
 
+//追加
+generator nestgraphql {
+    provider = "prisma-nestjs-graphql"
+    output = "../src/@generated/prisma-nestjs-graphql"
+}
+
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
