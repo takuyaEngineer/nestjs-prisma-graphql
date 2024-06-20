@@ -31,7 +31,7 @@ type Query {
 }
 
 type Mutation {
-  createUser(createUserInput: CreateUserInput!): User!
+  createUser(userCreateInput: UserCreateInput!): User!
   updateUser(updateUserInput: UpdateUserInput!): User!
   removeUser(id: Int!): User!
   createPost(createPostInput: CreatePostInput!): Post!
@@ -39,14 +39,14 @@ type Mutation {
   removePost(id: Int!): Post!
 }
 
-input CreateUserInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+input UserCreateInput {
+  email: String!
+  name: String
 }
 
 input UpdateUserInput {
-  """Example field (placeholder)"""
-  exampleField: Int
+  email: String
+  name: String
   id: Int!
 }
 
