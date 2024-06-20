@@ -32,7 +32,7 @@ type Query {
 
 type Mutation {
   createUser(userCreateInput: UserCreateInput!): User!
-  updateUser(updateUserInput: UpdateUserInput!): User!
+  updateUser(userUpdateInput: UserUpdateInput!): User!
   removeUser(id: Int!): User!
   createPost(createPostInput: CreatePostInput!): Post!
   updatePost(updatePostInput: UpdatePostInput!): Post!
@@ -44,7 +44,7 @@ input UserCreateInput {
   name: String
 }
 
-input UpdateUserInput {
+input UserUpdateInput {
   email: String
   name: String
   id: Int!
