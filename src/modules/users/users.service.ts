@@ -7,13 +7,21 @@ import { PrismaService } from 'nestjs-prisma';
 export class UsersService {
   constructor(private readonly prisma: PrismaService) {}
 
+  /**
+   * ユーザーを１つ作成する.
+   * @param userCreateInput
+   * @returns
+   */
   create(userCreateInput: UserCreateInput) {
     const user = this.prisma.user.create({
       data: userCreateInput,
     });
     return user;
   }
-
+  /**
+   * ユーザー一覧を取得する.
+   * @returns
+   */
   findAll() {
     return this.prisma.user.findMany({
       include: {
@@ -26,7 +34,11 @@ export class UsersService {
   findOne(id: number) {
     return `This action returns a #${id} user`;
   }
-
+  /**
+   * ユーザーを１つ更新する.
+   * @param userUpdateInput
+   * @returns
+   */
   update(userUpdateInput: UserUpdateInput) {
     const updateUser = this.prisma.user.update({
       where: {
@@ -41,6 +53,11 @@ export class UsersService {
   }
 
   remove(id: number) {
-    return `This action removes a #${id} user`;
+    const deleteUser = this.prisma.user.delete({
+      where: {
+        id: id,
+      },
+    });
+    return deleteUser;
   }
 }
